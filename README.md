@@ -1,5 +1,5 @@
 # algo
-Implementation of algorithm in different programming languages.
+Implementation of solutions in different programming languages.
 
 
 # Arrays
