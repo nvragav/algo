@@ -9,5 +9,5 @@ Implementation of solutions in different programming languages.
 
 
 ***
-#References
-[^1] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+#References --
+1. https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
