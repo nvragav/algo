@@ -84,12 +84,63 @@ int merge_sorted_arrays()
     {
         cout << result[i] << "," ;
     }
-    cout << endl;
-    
+    cout << endl;    
+}
+/*
+Input: 
+{{1,11,12,13},
+ {2,22,25,27,28},
+ {3,33,34}}
+Output:
+Total size 12
+1 11 2 22 3 33 12 13 25 27 34 28 
+Total size 12
+1 11 12 2 22 25 3 33 34 13 27 28 
+*/
+void mergeListOfArrays(vector<vector<int>> vv, vector<int> &result, size_t l)
+{
+    int iter = 0;
+    int tot_size = 0;
+                           
+    for(int i = 0; i < vv.size();i++)
+    {
+        tot_size += vv[i].size();
+    }
+    cout << "Total size " << tot_size << endl;
+    /* Traverse until all the elements are inserted */
+    while( result.size() < tot_size)
+    {
+        /* Traverse each and every row */
+        for(int j = 0; j < vv.size(); j++)
+        {
+            if(iter <= vv[j].size())
+            {
+                if( (iter + l) <= vv[j].size())
+                    result.insert(result.begin()+result.size(),vv[j].begin()+iter,vv[j].begin()+iter+l);
+                else /* Boundary condition */ 
+                    result.insert(result.begin()+result.size(),vv[j].begin()+iter,vv[j].end());  
+            }
+        }
+        iter += l;
+    }    
+    for(auto &c : result)
+    {
+        cout << c << " " ;
+    }      
 }
 int main() {
+    vector<int> result;
+    vector<vector<int>> vv= {{1,11,12,13},
+                             {2,22,25,27,28},
+                             {3,33,34}};    
+      
     sliding_window_max();
     merge_sorted_arrays();
-
+    
+    mergeListOfArrays(vv,result,2);
+    result.clear();
+    mergeListOfArrays(vv,result,3);   
+    
+    
     return 0;
 }
