@@ -128,6 +128,33 @@ void mergeListOfArrays(vector<vector<int>> vv, vector<int> &result, size_t l)
         cout << c << " " ;
     }      
 }
+/*
+Problem Statement:
+Find Second largest element in an array
+
+Ref: https://www.geeksforgeeks.org/find-second-largest-element-array/
+Output:
+Second Max Element: 34
+Second Max Element: 5 
+*/
+void findSecondMaxElement(vector<int> a)
+{
+    int max1 = 0 , max2 = 0;
+    
+    for(int i = 0 ; i < a.size();i++)
+    {
+        if(max1 < a[i])
+        {
+            max2 = max1;
+            max1 = a[i];
+        }
+        else if((a[i] < max1) && ( max2 < a[i]))
+        {
+            max2 = a[i];
+        }
+    }
+    cout << "Second Max Element: " << max2 << endl; 
+}
 int main() {
     vector<int> result;
     vector<vector<int>> vv= {{1,11,12,13},
@@ -140,7 +167,11 @@ int main() {
     mergeListOfArrays(vv,result,2);
     result.clear();
     mergeListOfArrays(vv,result,3);   
-    
-    
+   
+    vector<int> a = {12, 35, 1, 10, 34, 1};
+    vector<int> b = {10,5,10};
+    findSecondMaxElement(a);
+    findSecondMaxElement(b);   
+
     return 0;
 }
