@@ -156,6 +156,45 @@ void findSecondMaxElement(vector<int> a)
     }
     cout << "Second Max Element: " << max2 << endl; 
 }
+/*
+Problem Statement:
+Find subarray with given sum
+--- Finding subarray for the sum 36 ---
+No of subarrays 1
+(1,2)
+--- Finding subarray for the sum 35 ---
+No of subarrays 2
+(1,1)
+(4,5)
+--- Finding subarray for the sum 20 ---
+No of subarrays 0
+
+*/
+void findSubarrayWithGivenSum(vector<int> v,int k)
+{
+    int sum = 0;
+    vector<pair<int,int>> result;
+    
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
+    cout << "--- Finding subarray for the sum " << k << " ---" << endl;
+    for(int i = 0 ; i < v.size();i++)
+    {
+        for(int j = i ; (j < v.size()) && (j >= 0  );j--)
+        {
+            sum += v[j];
+            if( sum == k)
+            {
+                result.push_back(make_pair(j,i));
+            }
+        }
+        sum = 0;
+    }
+    cout << "No of subarrays " << result.size() << endl;
+    for(auto r : result)
+        cout << "("<< r.first << "," << r.second << ")" << endl;
+    
+}
+
 int main() {
     vector<int> result;
     vector<vector<int>> vv= {{1,11,12,13},
@@ -173,6 +212,11 @@ int main() {
     vector<int> b = {10,5,10};
     findSecondMaxElement(a);
     findSecondMaxElement(b);   
+
+    findSubarrayWithGivenSum(a,36);
+    findSubarrayWithGivenSum(a,35);    
+    findSubarrayWithGivenSum(b,20);
+
 
     return 0;
 }
