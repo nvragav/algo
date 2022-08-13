@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -14,7 +13,7 @@ int sliding_window_max()
     int a[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
     int i=0,j=0,k=3,max=0;
     int size = sizeof(a)/sizeof(a[0]);
-    
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
     for(i = k-1; i < size ; i++)
     {
         max = a[i];
@@ -48,7 +47,7 @@ int merge_sorted_arrays()
     int i = 0, j = 0;
     int size1 = sizeof(arr1)/sizeof(arr1[0]);
     int size2 = sizeof(arr2)/sizeof(arr2[0]);
-    
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
     for(i = 0; (i < size1) && (j < size2);)
     {
         if(arr1[i] < arr2[j])
@@ -101,7 +100,8 @@ void mergeListOfArrays(vector<vector<int>> vv, vector<int> &result, size_t l)
 {
     int iter = 0;
     int tot_size = 0;
-                           
+
+    cout << "\n>>> " << __func__ << "() >>>" << endl;                           
     for(int i = 0; i < vv.size();i++)
     {
         tot_size += vv[i].size();
@@ -126,7 +126,8 @@ void mergeListOfArrays(vector<vector<int>> vv, vector<int> &result, size_t l)
     for(auto &c : result)
     {
         cout << c << " " ;
-    }      
+    }     
+    cout << endl; 
 }
 /*
 Problem Statement:
@@ -140,7 +141,7 @@ Second Max Element: 5
 void findSecondMaxElement(vector<int> a)
 {
     int max1 = 0 , max2 = 0;
-    
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
     for(int i = 0 ; i < a.size();i++)
     {
         if(max1 < a[i])
