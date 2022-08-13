@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 /* Problem Statement:
@@ -195,6 +196,132 @@ void findSubarrayWithGivenSum(vector<int> v,int k)
     
 }
 
+/*
+Problem Statement:
+ Remove Duplicates from Sorted Array
+Ref:
+ https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+OUTPUT:
+>>> removeDuplicates() >>>
+--- Original Array ---
+0,0,1,1,1,2,2,3,3,4,
+--- Modified Array ---
+0,1,2,3,4,
+*/
+int  removeDuplicates(vector<int> &nums)
+{
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
+    cout << "--- Original Array ---" << endl;
+    for(auto n : nums)
+    {
+        cout << n << "," ;
+    }    
+    cout << endl;
+    
+    for(auto it = nums.begin(); it != nums.end();it++ )
+    {
+        auto dupIt = it+1;
+        
+        for(;dupIt != nums.end() && (*(dupIt) == *(it));)
+        {
+            nums.erase(dupIt);
+            dupIt = it+1;
+        }
+    }
+    cout << "--- Modified Array ---" << endl;
+    for(auto n : nums)
+    {
+        cout << n << "," ;
+    }
+    cout << endl;
+    
+    return(nums.size());
+}
+/*
+Problem Statement: 
+k largest(or smallest) elements in an array
+Ref: 
+https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
+
+OUTPUT:
+-------
+>>> findKLargestElements() >>>
+--- Original Array ---
+1,23,12,9,30,2,50, :: 	 K = 3
+--- Sorted Array ---
+1,2,9,12,23,30,50,
+--- Largest Elements ---
+50,30,23,
+
+>>> findKLargestElementsUsingPq() >>>
+--- Original Array ---
+1,23,12,9,30,2,50, :: 	 K = 3
+--- Largest Elements ---
+50,30,23,
+
+*/
+void findKLargestElements(vector<int> nums,int k)
+{
+    vector<int> res;
+    int min = 0;
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
+    cout << "--- Original Array ---" << endl;
+    for(auto n : nums)
+    {
+        cout << n << "," ;
+    }
+    cout <<  " :: " << "\t K = " << k << endl;
+    //Selection sort method - O(N^2)
+    for(int i = 0 ; i < nums.size();i++)
+    {
+        min = i;
+        for(int j = i+1; j < nums.size();j++)
+        {
+            if(nums[i] > nums[j])
+                min = j;
+        }
+        if(min != i)
+            swap(nums[i],nums[min]);
+    }
+    cout << "--- Sorted Array ---" << endl;
+    for(auto n : nums)
+    {
+        cout << n << ","; 
+    }
+    cout << endl;
+    cout << "--- Largest Elements ---" << endl;
+    for(int j = nums.size()-1; ((nums.size()-1)-j) < k;j--)
+    {
+        res.push_back(nums[j]);
+        cout << nums[j] << "," ;
+    }
+    cout << endl;
+}
+void findKLargestElementsUsingPq(vector<int> nums, int k)
+{
+    priority_queue<int> pq;
+    int i = 0;
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
+    cout << "--- Original Array ---" << endl;
+    for(auto n : nums)
+    {
+        cout << n << "," ;
+    }
+    cout <<  " :: " << "\t K = " << k << endl;
+    //Priority Queue Method.
+    for(auto n : nums)
+    {
+        pq.push(n);
+    }
+    cout << "--- Largest Elements ---" << endl;
+    for(int i =0 ; i < k ; i++)
+    {
+        cout << pq.top() << ",";
+        pq.pop();
+    }
+    cout << endl;
+}
 int main() {
     vector<int> result;
     vector<vector<int>> vv= {{1,11,12,13},
@@ -217,6 +344,11 @@ int main() {
     findSubarrayWithGivenSum(a,35);    
     findSubarrayWithGivenSum(b,20);
 
+    vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
+    removeDuplicates(nums);
 
+    vector<int> nums1 = {1, 23, 12, 9, 30, 2, 50};
+    findKLargestElements(nums1,3);
+    findKLargestElementsUsingPq(nums1,3);
     return 0;
 }
