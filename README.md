@@ -17,7 +17,12 @@ Implementation of solutions in different programming languages.
 2. [Search linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L48)
 3. [Delete linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L64)
 4. [Traverse linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L98)
-
+5. [Print reverse without reversing the pointers](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L139)
+6. [Swap two nodes based on values/data](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L150)
+7. [Swap two nodes those are with the distance of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L204)
+8. [Reverse the linkedlist with the sublist size of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L242)
+9. [Reverse the linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L265)
+  
 ---
 ## Binary Search Tree
 1. [Insert BST node](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L30) 
