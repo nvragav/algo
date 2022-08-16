@@ -39,6 +39,10 @@ Inserting node for 11
 4->1->5->2->3->10->11->NULL
 --- Reversing LinkedList ---
 11->10->3->2->5->1->4->NULL
+--- Removal of loop in LinkedList ---
+Loop node : 3
+Last node : 4
+11->10->3->2->5->1->4->NULL
 
 */
 class linkedList {
