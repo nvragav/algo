@@ -33,8 +33,8 @@ Implementation of solutions in different programming languages.
 
 ---
 ## C++ Smart Pointers
-
-
+TBD: 
+Problems on unique_ptr, shared_ptr, auto_ptr,weak_ptr
 
 ***
 ## References
