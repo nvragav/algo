@@ -22,6 +22,7 @@ Implementation of solutions in different programming languages.
 7. [Swap two nodes those are with the distance of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L204)
 8. [Reverse the linkedlist with the sublist size of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L242)
 9. [Reverse the linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L265)
+10. [Detect and break the loop in linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L299)
   
 ---
 ## Binary Search Tree
@@ -32,8 +33,8 @@ Implementation of solutions in different programming languages.
 
 ---
 ## C++ Smart Pointers
-
-
+TBD: 
+Problems on unique_ptr, shared_ptr, auto_ptr,weak_ptr
 
 ***
 ## References
