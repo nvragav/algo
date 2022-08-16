@@ -200,7 +200,7 @@ void swapllNodesByPointers(struct llNode* &head, int d1, int d2)
             }
         }
     }
-    
+
     struct llNode* swapllNodesByK(struct llNode* head, int k)
     {
         struct llNode *prev, *curr,*tmp;
@@ -261,8 +261,7 @@ void swapllNodesByPointers(struct llNode* &head, int d1, int d2)
         
         return(prev);
     }
-
-    struct llNode* reverseLinkedList(struct llNode *head)
+    struct llNode* reverseLinkedList(struct llNode *head,struct llNode* &gTail)
     {
         struct llNode *tmp = NULL;
         struct llNode *prev,*curr;
@@ -279,8 +278,57 @@ void swapllNodesByPointers(struct llNode* &head, int d1, int d2)
             curr = tmp;
         }
         tail->next = NULL;
+        //Updating tail
+        gTail = tail;
         return(prev);
     }
+    void createLinkedListLoop(struct llNode* head, int k,struct llNode* tail)
+    {
+        struct llNode* curr;
+        int cnt = 1;
+        curr = head;
+        while((curr != NULL) && (cnt < k))
+        {
+            curr = curr->next;
+            cnt++;
+        }        
+        tail->next = curr;
+        cout << "Loop node : " << curr->data << endl; 
+        
+    }
+    void breakLinkedListLoop(struct llNode* head,struct llNode* &tail)
+    {
+        struct llNode *slowPtr, *fastPtr,*tPtr;
+
+        
+        slowPtr = head;
+        fastPtr = head;
+        do
+        {
+            slowPtr = slowPtr->next;
+            fastPtr = fastPtr->next->next;
+            
+        }while(slowPtr != fastPtr);
+        
+        
+        //To detect the loop, fastPtr might have travelled to 2x length when slowPtr travelled x.
+        // Reset the fastPtr to head and move both the pointers to same pace. both of them will meet
+        // at loop node.
+        fastPtr = head;
+        
+        while(slowPtr != fastPtr)
+        {
+            //cout << slowPtr->data << " " << fastPtr->data << endl;
+            tPtr = slowPtr;
+            slowPtr = slowPtr->next;
+            fastPtr = fastPtr->next;
+        }
+        cout << "Last node : " << tPtr->data << endl;
+        tPtr->next = NULL;
+        tail = tPtr;
+        
+    }
+    
 };
 
 int main()
@@ -332,7 +380,11 @@ int main()
     sll.traversellNode(sll.head);    
   
     cout << "--- Reversing LinkedList ---" << endl;
-    sll.head = sll.reverseLinkedList(sll.head);
+    sll.head = sll.reverseLinkedList(sll.head,sll.tail);
     sll.traversellNode(sll.head);
- 
+
+    cout << "--- Removal of loop in LinkedList ---" << endl;
+    sll.createLinkedListLoop(sll.head,K,sll.tail);
+    sll.breakLinkedListLoop(sll.head,sll.tail);
+    sll.traversellNode(sll.head); 
 }
