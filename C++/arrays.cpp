@@ -202,12 +202,6 @@ Problem Statement:
 Ref:
  https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
-OUTPUT:
->>> removeDuplicates() >>>
---- Original Array ---
-0,0,1,1,1,2,2,3,3,4,
---- Modified Array ---
-0,1,2,3,4,
 */
 int  removeDuplicates(vector<int> &nums)
 {
@@ -243,22 +237,6 @@ Problem Statement:
 k largest(or smallest) elements in an array
 Ref: 
 https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
-
-OUTPUT:
--------
->>> findKLargestElements() >>>
---- Original Array ---
-1,23,12,9,30,2,50, :: 	 K = 3
---- Sorted Array ---
-1,2,9,12,23,30,50,
---- Largest Elements ---
-50,30,23,
-
->>> findKLargestElementsUsingPq() >>>
---- Original Array ---
-1,23,12,9,30,2,50, :: 	 K = 3
---- Largest Elements ---
-50,30,23,
 
 */
 void findKLargestElements(vector<int> nums,int k)
@@ -322,6 +300,67 @@ void findKLargestElementsUsingPq(vector<int> nums, int k)
     }
     cout << endl;
 }
+/*
+OUTPUT:
+------
+>>> sliding_window_max() >>>
+--- Sum of subarrays ---
+3,3,4,5,5,5,6,
+
+>>> merge_sorted_arrays() >>>
+--- Merged Array ---
+1,2,3,4,4,5,6,8,
+
+>>> mergeListOfArrays() >>>
+Total size 12
+1 11 2 22 3 33 12 13 25 27 34 28 
+
+>>> mergeListOfArrays() >>>
+Total size 12
+1 11 12 2 22 25 3 33 34 13 27 28 
+
+>>> findSecondMaxElement() >>>
+Second Max Element: 34
+
+>>> findSecondMaxElement() >>>
+Second Max Element: 5
+
+>>> findSubarrayWithGivenSum() >>>
+--- Finding subarray for the sum 36 ---
+No of subarrays 1
+(1,2)
+
+>>> findSubarrayWithGivenSum() >>>
+--- Finding subarray for the sum 35 ---
+No of subarrays 2
+(1,1)
+(4,5)
+
+>>> findSubarrayWithGivenSum() >>>
+--- Finding subarray for the sum 20 ---
+No of subarrays 0
+
+>>> removeDuplicates() >>>
+--- Original Array ---
+0,0,1,1,1,2,2,3,3,4,
+--- Modified Array ---
+0,1,2,3,4,
+
+>>> findKLargestElements() >>>
+--- Original Array ---
+1,23,12,9,30,2,50, :: 	 K = 3
+--- Sorted Array ---
+1,2,9,12,23,30,50,
+--- Largest Elements ---
+50,30,23,
+
+>>> findKLargestElementsUsingPq() >>>
+--- Original Array ---
+1,23,12,9,30,2,50, :: 	 K = 3
+--- Largest Elements ---
+50,30,23,
+
+*/
 int main() {
     vector<int> result;
     vector<vector<int>> vv= {{1,11,12,13},

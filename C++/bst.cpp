@@ -2,16 +2,6 @@
 
 #include <queue>
 using namespace std;
-/* 
-OUTPUT:
--------
---- Depth First Traversal ---
-1->2->3->4->5->
---- Breadth First Traversal ---
-5->4->2->1->3->
-Is available ? : 1
-Is available ? : 0
-*/
   
 class bst {
 
@@ -52,7 +42,7 @@ class bst {
       }
       return root;
   }
-  //Depth first traversal
+  //Depth first traversal or inOrderTraversal
   int traverseBst(struct bstNode* root)
   {
       
@@ -62,6 +52,29 @@ class bst {
     traverseBst(root->left);
     cout << root->data << "->" ;
     traverseBst(root->right);
+        
+  }
+  int traverseBstInPreOrder(struct bstNode* root)
+  {
+      
+      if(root == NULL)
+        return 0;
+        
+    cout << root->data << "->" ;
+    traverseBst(root->left);
+    traverseBst(root->right);
+        
+  }
+  int traverseBstInPostOrder(struct bstNode* root)
+  {
+      
+      if(root == NULL)
+        return 0;
+        
+
+    traverseBst(root->left);
+    traverseBst(root->right);
+    cout << root->data << "->" ;
         
   }
   //Level order or Breadth first traversal
@@ -107,6 +120,22 @@ class bst {
   }
   
 };
+/**
+OUTPUT:
+-------
+--- Depth First Traversal ---
+1->2->3->4->5->
+--- PreOrder Traversal ---
+5->1->2->3->4->
+--- PostOrder Traversal ---
+5->1->2->3->4->
+--- Breadth First Traversal ---
+5->4->2->1->3->
+--- Searching in BST ---
+Is available(1)? : 1
+Is available(10)? : 0
+
+**/
 int main() {
     // Write C++ code here
     bst bs;
@@ -117,14 +146,21 @@ int main() {
     bs.insertNode(bs.root,bs.createNode(3));
     bs.insertNode(bs.root,bs.createNode(1));
 
+
     cout << "--- Depth First Traversal ---" << endl;
     bs.traverseBst(bs.root);
+    cout << "\n--- PreOrder Traversal ---" << endl;
+    bs.traverseBstInPreOrder(bs.root);
+    cout << "\n--- PostOrder Traversal ---" << endl;
+    bs.traverseBstInPostOrder(bs.root);
+
     cout << "\n--- Breadth First Traversal ---" << endl;
     
     bs.levelOrderTraversal(bs.root);
     
     cout << endl;
-    cout << "Is available ? : " << bs.searchBst(bs.root,1) << endl;
-    cout << "Is available ? : " << bs.searchBst(bs.root,10) << endl;
+    cout << "--- Searching in BST ---" << endl;
+    cout << "Is available(1)? : " << bs.searchBst(bs.root,1) << endl;
+    cout << "Is available(10)? : " << bs.searchBst(bs.root,10) << endl;
     return 0;
 }
