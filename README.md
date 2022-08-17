@@ -11,7 +11,7 @@ Implementation of solutions in different programming languages.
 5. [Find subarray sum with given sum](https://github.com/nvragav/algo/blob/main/C%2B%2B/arrays.cpp#L161)
 6. [Remove duplicates from sorted array](https://github.com/nvragav/algo/blob/main/C%2B%2B/arrays.cpp#L200)
 7. [K largest(or smallest) elements in an array](https://github.com/nvragav/algo/blob/main/C%2B%2B/arrays.cpp#L242)
----
+
 ## LinkedList
 1. [Insert linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L34)
 2. [Search linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L48)
@@ -24,14 +24,12 @@ Implementation of solutions in different programming languages.
 9. [Reverse the linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L265)
 10. [Detect and break the loop in linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L299)
   
----
 ## Binary Search Tree
 1. [Insert BST node](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L30) 
 2. [Search BST](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L89)
 3. [Depth first search](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L56)
 4. [Breadth first search or Level order traversal](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L68)
 
----
 ## C++ Smart Pointers
 TBD: 
 Problems on unique_ptr, shared_ptr, auto_ptr,weak_ptr
