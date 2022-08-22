@@ -118,7 +118,19 @@ class bst {
     
     return false;
   }
-  
+
+  //height of bst 
+  int heightOfBst(struct bstNode* root, int level)
+  {
+      int h1, h2;
+      if( root == NULL)
+        return -1;
+    
+     h1 = heightOfBst(root->left,level+1) + 1;
+     h2 = heightOfBst(root->right,level+1) + 1;
+     
+     return( ((h1 > h2) ? h1 : h2) );
+  }
 };
 /**
 OUTPUT:
@@ -134,6 +146,7 @@ OUTPUT:
 --- Searching in BST ---
 Is available(1)? : 1
 Is available(10)? : 0
+Height of BST 3
 
 **/
 int main() {
@@ -162,5 +175,7 @@ int main() {
     cout << "--- Searching in BST ---" << endl;
     cout << "Is available(1)? : " << bs.searchBst(bs.root,1) << endl;
     cout << "Is available(10)? : " << bs.searchBst(bs.root,10) << endl;
-    return 0;
+    
+   cout << "Height of BST " << bs.heightOfBst(bs.root, 0) << endl; 
+   return 0;
 }
