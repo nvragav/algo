@@ -1,50 +1,7 @@
 #include <iostream>
 
 using namespace std;
-/*
-OUTPUT:
--------
-Inserting node for 5
-Inserting node for 4
-Inserting node for 3
-Inserting node for 2
-Inserting node for 1
---- LinkedList ---
-5->4->3->2->1->NULL
---- Deleting 3 ---
---- LinkedList ---
-5->4->2->1->NULL
-Is available ?  --- Searching 1 ---
-1
-Is available ?  --- Searching 3 ---
-0
---- Printing Linked list in reverse order ---
-1->2->4->5->NULL
---- Sequence of Linkedlist ---
-5->4->2->1->NULL
-Swapping the nodes that holds 4 and 2
-5->2->4->1->NULL
-Swapping the nodes that holds 2 and 1
-5->1->4->2->NULL
-Swapping the nodes that holds 5 and 4
-4->1->5->2->NULL
-Inserting node for 3
-Inserting node for 10
-Inserting node for 11
---- LinkedList ---
-4->1->5->2->3->10->11->NULL
---- Reversing LinkedList by 3
-5->1->4->10->3->2->11->NULL
---- Swapping the nodes with the distance of 3
-4->1->5->2->3->10->11->NULL
---- Reversing LinkedList ---
-11->10->3->2->5->1->4->NULL
---- Removal of loop in LinkedList ---
-Loop node : 3
-Last node : 4
-11->10->3->2->5->1->4->NULL
 
-*/
 class linkedList {
 
     public:
@@ -334,6 +291,50 @@ void swapllNodesByPointers(struct llNode* &head, int d1, int d2)
     }
     
 };
+/*
+OUTPUT:
+-------
+Inserting node for 5
+Inserting node for 4
+Inserting node for 3
+Inserting node for 2
+Inserting node for 1
+--- LinkedList ---
+5->4->3->2->1->NULL
+--- Deleting 3 ---
+--- LinkedList ---
+5->4->2->1->NULL
+Is available ?  --- Searching 1 ---
+1
+Is available ?  --- Searching 3 ---
+0
+--- Printing Linked list in reverse order ---
+1->2->4->5->NULL
+--- Sequence of Linkedlist ---
+5->4->2->1->NULL
+Swapping the nodes that holds 4 and 2
+5->2->4->1->NULL
+Swapping the nodes that holds 2 and 1
+5->1->4->2->NULL
+Swapping the nodes that holds 5 and 4
+4->1->5->2->NULL
+Inserting node for 3
+Inserting node for 10
+Inserting node for 11
+--- LinkedList ---
+4->1->5->2->3->10->11->NULL
+--- Reversing LinkedList by 3
+5->1->4->10->3->2->11->NULL
+--- Swapping the nodes with the distance of 3
+4->1->5->2->3->10->11->NULL
+--- Reversing LinkedList ---
+11->10->3->2->5->1->4->NULL
+--- Removal of loop in LinkedList ---
+Loop node : 3
+Last node : 4
+11->10->3->2->5->1->4->NULL
+
+*/
 
 int main()
 {
