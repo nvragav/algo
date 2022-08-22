@@ -14,16 +14,16 @@ Implementation of solutions in different programming languages.
 8. [Find a number in sorted array](https://github.com/nvragav/algo/blob/main/C%2B%2B/arrays.cpp#L306)
 
 ## LinkedList
-1. [Insert linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L34)
-2. [Search linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L48)
-3. [Delete linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L64)
-4. [Traverse linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L98)
-5. [Print reverse without reversing the pointers](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L139)
-6. [Swap two nodes based on values/data](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L150)
-7. [Swap two nodes those are with the distance of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L204)
-8. [Reverse the linkedlist with the sublist size of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L242)
-9. [Reverse the linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L265)
-10. [Detect and break the loop in linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L299)
+1. [Insert linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L22)
+2. [Search linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L37)
+3. [Delete linkedlist node](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L53)
+4. [Traverse linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L87)
+5. [Print reverse without reversing the pointers](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L100)
+6. [Swap two nodes based on values/data](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L111)
+7. [Swap two nodes those are with the distance of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L165)
+8. [Reverse the linkedlist with the sublist size of K](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L203)
+9. [Reverse the linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L225)
+10. [Detect and break the loop in linkedlist](https://github.com/nvragav/algo/blob/main/C%2B%2B/linkedlist.cpp#L260)
   
 ## Binary Search Tree
 1. [Insert BST node](https://github.com/nvragav/algo/blob/main/C%2B%2B/bst.cpp#L30) 
