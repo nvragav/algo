@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
+
 using namespace std;
 
 /* Problem Statement:
@@ -300,6 +302,33 @@ void findKLargestElementsUsingPq(vector<int> nums, int k)
     }
     cout << endl;
 }
+
+bool findNoUsingBstInSortedArray(vector<int> v, int no)
+{
+    int low =0 , mid = 0 , high = v.size()-1;
+    bool flag = false;
+    cout << "\n>>> " << __func__ << "() >>>" << endl;
+    cout << "Finding " << no << endl;
+    
+    while(low <= high)
+    {
+        mid = (high + low) / 2;
+        if(v[mid] == no)
+        {
+             flag = true;
+             break;
+        }
+        else if(no < v[mid])
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return (flag);
+}
 /*
 OUTPUT:
 ------
@@ -359,6 +388,16 @@ No of subarrays 0
 1,23,12,9,30,2,50, :: 	 K = 3
 --- Largest Elements ---
 50,30,23,
+--- Sorted array ----
+1,2,9,12,23,30,50,
+
+>>> findNoUsingBstInSortedArray() >>>
+Finding 9
+Found
+
+>>> findNoUsingBstInSortedArray() >>>
+Finding 10
+Not Found
 
 */
 int main() {
@@ -389,5 +428,14 @@ int main() {
     vector<int> nums1 = {1, 23, 12, 9, 30, 2, 50};
     findKLargestElements(nums1,3);
     findKLargestElementsUsingPq(nums1,3);
+
+     std::sort(nums1.begin(),nums1.end());
+    cout << "--- Sorted array ----" << endl;
+    for(auto n : nums1)
+        cout << n << ","; 
+    cout << endl;
+    cout << ((findNoUsingBstInSortedArray(nums1,9)) ? "Found" : "Not Found" ) << endl ;
+    cout << ((findNoUsingBstInSortedArray(nums1,10)) ? "Found" : "Not Found") << endl ;
     return 0;
+
 }
